@@ -15,13 +15,13 @@ import org.jsoup.nodes.Element;
 import org.jsoup.select.Elements;
 public class Scrape {
 	public static void main(String[] args) throws IOException {
-	        String FILEPATH= ""; //create text document and type path
+	        String FILEPATH1= "C:\Users\nugo\Documents\GitHub\Web-scraper-jsoup\src\output.txt";
+	        String FILEPATH= "C:\Users\nugo\Documents\GitHub\Web-scraper-jsoup\src\test.txt"
 			PrintWriter out = new PrintWriter(new FileWriter( "C:\\Users\\USER-pc\\Desktop\\11.txt"));
 			Document doc = Jsoup.connect("https://en.wikipedia.org/wiki/Penguin").get();
-			//String regex = "([^\\s]+(\\.(?i)(jpg|png|gif|bmp))$)";
 			Elements media = doc.select("[src]");
 			Elements links = doc.getElementsByTag("a");
-			String L="";
+			String L ="";
 			String M="";
 		    String BURL= "https://en.wikipedia.org";
 		    Set<String> linesl = new LinkedHashSet();
@@ -34,7 +34,7 @@ public class Scrape {
 		    String HTTP = "https://";
 			//PrintWriter out1 = new PrintWriter(new FileWriter( "C:\\Users\\USER-pc\\Desktop\\111.txt"));
 			//out1.println("Link");
-			for (Element l : links ) {
+			for (Element L  : links ) {
 				
 				 L= l.attr("href");
 				 L=L.toLowerCase();
